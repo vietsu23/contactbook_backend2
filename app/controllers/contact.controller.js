@@ -39,7 +39,7 @@ exports.findAll= async (req, res, next) => {
 exports.findOne = async (req, res, next) => {
     try {
         const contactService = new ContactService(MongoDB.client);
-        console.log(`Searching for contact with ID: ${req.params.id}`); // Ghi ID ra console
+        console.log(`Searching for contact with ID: ${req.params.id}`);
         const document = await contactService.findById(req.params.id);
         console.log(`Contact found: ${document}`);
         if(!document) {
